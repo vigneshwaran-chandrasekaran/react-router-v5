@@ -5,11 +5,15 @@ import {
   Link
 } from 'react-router-dom';
 
+import { Button } from 'react-bootstrap';
+
+
 function App() {
   return (
     <Router>
       <div className="App">
         <h1>App page</h1>
+        <Button variant="primary">Primary</Button>
       </div>
     </Router>
   );
