@@ -18,7 +18,9 @@ export default function Navigation() {
                         <Nav.Link exact as={NavLink} to='/'>Home</Nav.Link>
                         <Nav.Link as={NavLink} to='/about'>About</Nav.Link>
                         <Nav.Link as={NavLink} to='/todo'>Todo</Nav.Link>
-                        <Nav.Link as={NavLink} to='/contact'>Contact</Nav.Link>
+                        <Nav.Link as={NavLink} to='/common-one'>Array Route 1</Nav.Link>
+                        <Nav.Link as={NavLink} to='/common-two'>Array Route 2</Nav.Link>
+                        <Nav.Link as={NavLink} to='/dashboard'>Dashboard</Nav.Link>
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             <NavDropdown.Item exact as={NavLink} to="/">Home</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to="/about">About</NavDropdown.Item>
