@@ -12,6 +12,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Todos from './pages/Todos';
 import Todo from './pages/Todo';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/todo' exact component={Todos} />
           <Route path='/todo/:id' component={Todo} />
           <Route path='/contact' component={Contact} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     </BrowserRouter>
