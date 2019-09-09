@@ -10,7 +10,7 @@ export default function About(props) {
     return (
         <div>
             <h1>About page</h1>
-            <Button variant="primary" onClick={handleOnClick}>Programmatic navigation to todo page</Button>
+            <Button variant="primary" onClick={handleOnClick}>Click here to programmatic navigation to todo page</Button>
         </div>
     )
 }

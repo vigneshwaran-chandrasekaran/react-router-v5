@@ -32,6 +32,10 @@ function Contact() {
         }
       />
       <h1>Contact page</h1>
+      <p>This page is implemented <strong>Prompt</strong> concept</p>
+      <p>If you type anything in below textbox and try to navigate any other route(page) except Dashboard page,
+        the Prompt will invoke
+      </p>
       <input
         value={name}
         onChange={handleOnChange}
