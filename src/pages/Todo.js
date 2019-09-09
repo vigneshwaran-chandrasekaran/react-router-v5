@@ -3,9 +3,17 @@ import React, { useState, useEffect } from 'react';
 export default function Todo({ match }) {
 
     useEffect(() => {
-        fetchTodo();
-        console.log({ match });
+        console.log('Component did mount');
     }, []);
+
+    useEffect(() => {
+        console.log('Id changes');
+        fetchTodo();
+    }, [match.params.id]);
+
+    useEffect(() => {
+        console.log('always call');
+    });
 
     const [todo, setTodo] = useState([]);
 
@@ -15,15 +23,13 @@ export default function Todo({ match }) {
 
         const todo = await data.json();
 
-        console.log({ todo });
-
         setTodo(todo);
     };
 
     return (
         <div>
             <h1>Todo page</h1>
-            <p>{todo.id} - {todo.title}</p>
+            <p>{match.params.id} - {todo.id} - {todo.title}</p>
         </div>
     )
 }

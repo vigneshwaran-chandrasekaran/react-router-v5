@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 /**
  * import { Nav, Navbar, NavDropdown, MenuItem, Tabs, ButtonToolbar, Button,
@@ -20,6 +20,7 @@ export default function Navigation() {
                         <Nav.Link as={NavLink} to='/todo'>Todo</Nav.Link>
                         <Nav.Link as={NavLink} to='/common-one'>Array Route 1</Nav.Link>
                         <Nav.Link as={NavLink} to='/common-two'>Array Route 2</Nav.Link>
+                        <Nav.Link as={NavLink} to='/topics'>Topics</Nav.Link>
                         <Nav.Link as={NavLink} to='/dashboard'>Dashboard</Nav.Link>
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             <NavDropdown.Item exact as={NavLink} to="/">Home</NavDropdown.Item>

@@ -11,9 +11,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Todos from './pages/Todos';
-import Todo from './pages/Todo';
 import Common from './pages/Common';
 import Dashboard from './pages/Dashboard';
+import Topics from './pages/Topics';
 import NotFound from './pages/NotFound';
 import './App.css';
 
@@ -25,8 +25,8 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/about' component={About} />
-          <Route path='/todo' exact component={Todos} />
-          <Route path='/todo/:id' component={Todo} />
+          <Route path='/todo' component={Todos} />
+          <Route path='/topics' component={Topics} />
           <Route path='/contact' component={Contact} />
           {/* react router v5 feature array of routes */}
           <Route path={["/common-one", "/common-two"]} component={Common} />
