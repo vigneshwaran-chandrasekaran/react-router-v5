@@ -42,7 +42,7 @@ class Login extends Component {
     return (
       <div>
         <p>You must log in to view the page at {from.pathname}</p>
-        <button onClick={this.login}>Log in</button>
+        <button className='btn btn-success' onClick={this.login}>Log in</button>
       </div>
     );
   }
@@ -52,7 +52,7 @@ const AuthButton = withRouter(
     fakeAuth.isAuthenticated ? (
       <p>
         Welcome!{" "}
-        <button
+        <button className='btn btn-danger'
           onClick={() => {
             fakeAuth.signout(() => history.push("/"));
           }}
@@ -61,7 +61,7 @@ const AuthButton = withRouter(
         </button>
       </p>
     ) : (
-        <p>You are not logged in.</p>
+        <p className="bg-danger text-white">You are not logged in.</p>
       )
 );
 
@@ -76,7 +76,9 @@ function PrivateRoute({ component: Component, ...rest }) {
             <Redirect
               to={{
                 pathname: "/login",
-                state: { from: props.location }
+                state: {
+                  from: props.location
+                }
               }}
             />
           )
