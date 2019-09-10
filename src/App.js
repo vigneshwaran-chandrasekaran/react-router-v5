@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter,
   Route,
-  Switch,
-  Redirect
+  Switch
 } from 'react-router-dom';
 
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import Login from './components/Login';
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -17,35 +18,8 @@ import Dashboard from './pages/Dashboard';
 import Topics from './pages/Topics';
 import NotFound from './pages/NotFound';
 import Protected from './pages/Protected';
-
-import { AuthButton, PrivateRoute, fakeAuth } from './shared/auth';
-
+import { AuthButton, PrivateRoute } from './shared/auth';
 import './App.css';
-
-
-class Login extends Component {
-  state = { redirectToReferrer: false };
-
-  login = () => {
-    fakeAuth.authenticate(() => {
-      this.setState({ redirectToReferrer: true });
-    });
-  };
-
-  render() {
-    let { from } = this.props.location.state || { from: { pathname: "/" } };
-    let { redirectToReferrer } = this.state;
-
-    if (redirectToReferrer) return <Redirect to={from} />;
-
-    return (
-      <div>
-        <p>You must log in to view the page at {from.pathname}</p>
-        <button className='btn btn-success' onClick={this.login}>Log in</button>
-      </div>
-    );
-  }
-}
 
 function App() {
   return (
