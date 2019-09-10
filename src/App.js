@@ -120,6 +120,7 @@ function App() {
           />
           <Route path="/login" component={Login} />
           <PrivateRoute path="/protected" component={Protected} />
+          <PrivateRoute path="/private/:id?" component={Protected} />
           <Route component={NotFound} />
         </Switch>
       </div>
