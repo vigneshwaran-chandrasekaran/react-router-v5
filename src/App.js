@@ -3,8 +3,7 @@ import {
   BrowserRouter,
   Route,
   Switch,
-  Redirect,
-  withRouter
+  Redirect
 } from 'react-router-dom';
 
 import Navigation from './components/Navigation';
@@ -17,12 +16,12 @@ import Common from './pages/Common';
 import Dashboard from './pages/Dashboard';
 import Topics from './pages/Topics';
 import NotFound from './pages/NotFound';
+import Protected from './pages/Protected';
+
+import { AuthButton, PrivateRoute, fakeAuth } from './shared/auth';
+
 import './App.css';
 
-
-function Protected() {
-  return <h3>Protected</h3>;
-}
 
 class Login extends Component {
   state = { redirectToReferrer: false };
@@ -47,59 +46,6 @@ class Login extends Component {
     );
   }
 }
-const AuthButton = withRouter(
-  ({ history }) =>
-    fakeAuth.isAuthenticated ? (
-      <p>
-        Welcome!{" "}
-        <button className='btn btn-danger'
-          onClick={() => {
-            fakeAuth.signout(() => history.push("/"));
-          }}
-        >
-          Sign out
-        </button>
-      </p>
-    ) : (
-        <p className="bg-danger text-white">You are not logged in.</p>
-      )
-);
-
-function PrivateRoute({ component: Component, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        fakeAuth.isAuthenticated ? (
-          <Component {...props} />
-        ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: {
-                  from: props.location
-                }
-              }}
-            />
-          )
-      }
-    />
-  );
-}
-
-
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true;
-    setTimeout(cb, 100); // fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false;
-    setTimeout(cb, 100);
-  }
-};
-
 
 function App() {
   return (
