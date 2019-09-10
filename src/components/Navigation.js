@@ -22,6 +22,7 @@ export default function Navigation() {
                         <Nav.Link as={NavLink} to='/common-two'>Array Route 2</Nav.Link>
                         <Nav.Link as={NavLink} to='/topics'>Topics</Nav.Link>
                         <Nav.Link as={NavLink} to='/dashboard'>Dashboard</Nav.Link>
+                        <Nav.Link as={NavLink} to='/protected'>Protected</Nav.Link>
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             <NavDropdown.Item exact as={NavLink} to="/">Home</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to="/about">About</NavDropdown.Item>
