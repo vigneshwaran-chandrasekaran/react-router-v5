@@ -11,7 +11,7 @@ export default function Navigation() {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
-                <Navbar.Brand as={NavLink} to="/">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand as={NavLink} to="/">React Router V5</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
@@ -22,6 +22,7 @@ export default function Navigation() {
                         <Nav.Link as={NavLink} to='/common-two'>Array Route 2</Nav.Link>
                         <Nav.Link as={NavLink} to='/topics'>Topics</Nav.Link>
                         <Nav.Link as={NavLink} to='/dashboard'>Dashboard</Nav.Link>
+                        <Nav.Link as={NavLink} to='/redirect'>Redirect</Nav.Link>
                         <NavDropdown title="Protected" id="collasible-nav-dropdown">
                             <NavDropdown.Item exact as={NavLink} to="/protected">Protected</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to="/private">Private</NavDropdown.Item>

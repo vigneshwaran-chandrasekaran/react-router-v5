@@ -15,11 +15,11 @@ export const AuthButton = withRouter(
                         fakeAuth.signout(() => history.push("/"));
                     }}
                 >
-                    Sign out
+                    Log out
                 </button>
             </p>
         ) : (
-                <p className="bg-danger text-white">You are not logged in.</p>
+                <p className="bg-danger text-white">You are not logged in.  Go to any one of protected route for login</p>
             )
 );
 

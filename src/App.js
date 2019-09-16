@@ -18,6 +18,7 @@ import Dashboard from './pages/Dashboard';
 import Topics from './pages/Topics';
 import NotFound from './pages/NotFound';
 import Protected from './pages/Protected';
+import Redirect from './pages/Redirect';
 import { AuthButton, PrivateRoute } from './shared/auth';
 import './App.css';
 
@@ -40,6 +41,7 @@ function App() {
             path='/dashboard'
             render={(props) => <Dashboard {...props} isAuthed={true} name='vigneshwaran' place='chennai' />}
           />
+          <Route path='/redirect' component={Redirect} />
           <Route path="/login" component={Login} />
           <PrivateRoute path="/protected" component={Protected} />
           <PrivateRoute path="/private/:id?" component={Protected} />
