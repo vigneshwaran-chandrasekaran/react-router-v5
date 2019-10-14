@@ -19,8 +19,11 @@ import Topics from './pages/Topics';
 import NotFound from './pages/NotFound';
 import Protected from './pages/Protected';
 import Redirect from './pages/Redirect';
+import Items from './pages/Items';
 import { AuthButton, PrivateRoute } from './shared/auth';
 import './App.css';
+
+const cat = { category: 'food' }
 
 function App() {
   return (
@@ -45,6 +48,22 @@ function App() {
           <Route path="/login" component={Login} />
           <PrivateRoute path="/protected" component={Protected} />
           <PrivateRoute path="/private/:id?" component={Protected} />
+          <Route
+            exact
+            path='/items'
+            component={Items}
+          />
+          <Route
+            exact
+            path='/items'
+            render={() => (<div>List of Items</div>)}
+          />
+          <Route
+            exact path='/items'
+            render={props => <Items {...props} data={cat} />}
+          />
+          <Route children={props => <Items {...props} />} />
+          <Route children={() => <Items />} />
           <Route component={NotFound} />
         </Switch>
       </div>
