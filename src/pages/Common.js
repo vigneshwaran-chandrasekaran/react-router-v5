@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function Common() {
   return (
@@ -7,7 +7,7 @@ function Common() {
       <p>Array route 1</p>
       <p>Array route 2</p>
     </div>
-  )
+  );
 }
 
 export default Common;

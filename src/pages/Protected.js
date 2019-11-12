@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function Protected() {
-    return (
-        <div>
-            <h3>Protected</h3>
-        </div>
-    )
+  return (
+    <div>
+      <h3>Protected</h3>
+    </div>
+  );
 }

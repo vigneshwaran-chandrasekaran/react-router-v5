@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Prompt } from 'react-router'
+import React, { useState } from "react";
+import { Prompt } from "react-router";
 
 function Contact() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   function handleOnChange(e) {
     setName(e.target.value);
@@ -22,7 +22,7 @@ function Contact() {
       />
       <Prompt
         when={!!name}
-        message={(location) => `Are you sure you want to ${location.pathname}`}
+        message={location => `Are you sure you want to ${location.pathname}`}
       />
       <Prompt
         message={location =>
@@ -32,17 +32,17 @@ function Contact() {
         }
       />
       <h1>Contact page</h1>
-      <p>This page is implemented <strong>Prompt</strong> concept</p>
-      <p>If you type anything in below textbox and try to navigate any other route(page) except Dashboard page,
-        the Prompt will invoke
+      <p>
+        This page is implemented <strong>Prompt</strong> concept
       </p>
-      <input
-        value={name}
-        onChange={handleOnChange}
-        placeholder='Name' />
+      <p>
+        If you type anything in below textbox and try to navigate any other
+        route(page) except Dashboard page, the Prompt will invoke
+      </p>
+      <input value={name} onChange={handleOnChange} placeholder="Name" />
       <p>{name}</p>
     </div>
-  )
+  );
 }
 
 export default Contact;

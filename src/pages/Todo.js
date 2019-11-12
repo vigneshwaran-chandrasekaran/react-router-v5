@@ -1,35 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function Todo({ match }) {
+  useEffect(() => {
+    console.log("Component did mount");
+  }, []);
 
-    useEffect(() => {
-        console.log('Component did mount');
-    }, []);
+  useEffect(() => {
+    console.log("Id changes");
+    fetchTodo();
+  }, [match.params.id]);
 
-    useEffect(() => {
-        console.log('Id changes');
-        fetchTodo();
-    }, [match.params.id]);
+  useEffect(() => {
+    console.log("always call");
+  });
 
-    useEffect(() => {
-        console.log('always call');
-    });
+  const [todo, setTodo] = useState([]);
 
-    const [todo, setTodo] = useState([]);
+  const fetchTodo = async () => {
+    const data = await fetch(
+      `https://jsonplaceholder.typicode.com/todos/${match.params.id}`
+    );
 
-    const fetchTodo = async () => {
+    const todo = await data.json();
 
-        const data = await fetch(`https://jsonplaceholder.typicode.com/todos/${match.params.id}`);
+    setTodo(todo);
+  };
 
-        const todo = await data.json();
-
-        setTodo(todo);
-    };
-
-    return (
-        <div>
-            <h1>Todo page</h1>
-            <p>{match.params.id} - {todo.id} - {todo.title}</p>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Todo page</h1>
+      <p>
+        {match.params.id} - {todo.id} - {todo.title}
+      </p>
+    </div>
+  );
 }
