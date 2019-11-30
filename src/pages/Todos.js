@@ -5,8 +5,8 @@ import Todo from "./Todo";
 export default function Todos({ match }) {
   let { path, url } = useRouteMatch();
 
-  console.log({ path }); // old match.path
-  console.log({ url }); // old match.url
+  console.log({ path }); // old way is match.path
+  console.log({ url }); // old way is match.url
 
   useEffect(() => {
     console.log({ match });
