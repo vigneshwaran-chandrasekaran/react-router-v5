@@ -1,0 +1,14 @@
+useHistory
+useLocation
+useRouteMatch
+useParams
+
+
+Switch - 
+
+
+let { id } = useParams(); - get url id
+
+let { path, url } = useRouteMatch(); - get path and url
+{path: "/todo/:id"}
+{url: "/todo/5"}
