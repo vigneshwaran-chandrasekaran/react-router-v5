@@ -1,9 +1,11 @@
 import React from "react";
-import { Route, useRouteMatch } from "react-router-dom";
+import { Route, useRouteMatch, useLocation } from "react-router-dom";
 import CustomLink from "../components/CustomLink";
 import Todo from "./Todo";
 
 function Common() {
+  let location = useLocation();
+  console.log("location", location);
   const { path, url } = useRouteMatch();
   console.log({ path }); // old way is match.path
   console.log({ url }); // old way is match.url
@@ -13,6 +15,7 @@ function Common() {
       <h1>Common page for multiple routes</h1>
       <p>Array route 1</p>
       <p>Array route 2</p>
+      <p>{location.pathname}</p>
 
       <div>
         <CustomLink

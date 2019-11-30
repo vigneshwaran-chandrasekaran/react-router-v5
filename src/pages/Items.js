@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import qs from "qs";
 
 export default function Items(props) {
   const [state, setState] = useState("");
+  let location = useLocation();
+  console.log("location", location);
 
   useEffect(() => {
     console.log({ props });
