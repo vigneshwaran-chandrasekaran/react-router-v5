@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useRouteMatch } from "react-router-dom";
 
 export default function Todo({ match }) {
   /**
    * new way get id from url
    */
   let { id } = useParams();
+
+  // The `path` lets us build <Route> paths that are
+  // relative to the parent route, while the `url` lets
+  // us build relative links.
+  let { path, url } = useRouteMatch();
+
+  console.log({ path });
+  console.log({ url });
 
   /**
    * props.match.params.id === match.params.id === id

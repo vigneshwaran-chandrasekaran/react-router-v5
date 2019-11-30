@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route, useRouteMatch } from "react-router-dom";
 import Todo from "./Todo";
-import { Route } from "react-router-dom";
 
 export default function Todos({ match }) {
+  let { path, url } = useRouteMatch();
+
+  console.log({ path }); // old match.path
+  console.log({ url }); // old match.url
+
   useEffect(() => {
     console.log({ match });
     fetchItems();
@@ -31,12 +35,17 @@ export default function Todos({ match }) {
             <Link to={`${match.url}/${id}`}>
               {id} - {title}
             </Link>
+            <br />
+            <Link to={`${url}/${id}`}>
+              {id} - {title}
+            </Link>
           </div>
         ))}
         <hr />
       </div>
       <div>
         <Route exact path={`${match.path}/:id`} component={Todo} />
+        <Route exact path={`${path}/:id`} component={Todo} />
         <Route
           exact
           path={match.path}
