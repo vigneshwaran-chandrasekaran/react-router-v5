@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export default function Todo({ match }) {
+  let { id } = useParams();
+
   useEffect(() => {
     console.log("Component did mount");
   }, []);
@@ -32,6 +35,7 @@ export default function Todo({ match }) {
       <p>
         {match.params.id} - {todo.id} - {todo.title}
       </p>
+      <p>{id}</p>
     </div>
   );
 }
