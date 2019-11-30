@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { fakeAuth } from "../shared/auth";
 import { Redirect } from "react-router-dom";
+import { fakeAuth } from "../shared/auth";
 
 export default class Login extends Component {
   state = { redirectToReferrer: false };
