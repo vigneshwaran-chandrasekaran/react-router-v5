@@ -13,7 +13,7 @@ let { path, url } = useRouteMatch(); - get path and url
 
 
 
-----
+----------------------------------------------------------------------------------------------------
 
   BrowserRouter as Router,
   Switch,
@@ -21,3 +21,71 @@ let { path, url } = useRouteMatch(); - get path and url
   Link,
   Prompt,
 Redirect
+
+----------------------------------------------------------------------------------------------------
+
+ useLocation(); == props.location
+ useRouteMatch(); == props.match
+ useHistory(); == props.history
+
+
+----------------------------------------------------------------------------------------------------
+Primary Components
+
+routers, like <BrowserRouter> and <HashRouter>
+route matchers, like <Route> and <Switch>
+and navigation, like <Link>, <NavLink>, and <Redirect>
+
+----------------------------------------------------------------------------------------------------
+different types of router 
+https://reacttraining.com/react-router/web/api/Route/route-render-methods
+
+The recommended method of rendering something with a <Route> is to use children elements
+
+we can use 3 types of route rendering	
+component
+render
+children
+
+All three render methods will be passed the same three route props
+
+match
+location
+history
+
+
+if we use component it will create new element every time
+
+When you use component (instead of render or children, below) 
+the router uses React.createElement to create a new React element from the given component.
+
+you would create a new component every render. This results in the existing 
+component unmounting and the new component mounting instead of just updating the existing component. 
+
+
+render: func
+This allows for convenient inline rendering and wrapping without the undesired remounting.
+
+
+Warning: 
+<Route component> takes precedence over <Route render> so don’t use both in the same <Route>.
+
+Warning: <Route children> 
+takes precedence over both 
+<Route component> and <Route render> so don’t use more than one in the same <Route>.
+
+
+
+----------------------------------------------------------------------------------------------------
+
+strict: bool
+ strict can be used to enforce that a location.pathname has no trailing slash
+
+sensitive: bool
+
+When true, will match if the path is case sensitive.
+
+----------------------------------------------------------------------------------------------------
+
+
+

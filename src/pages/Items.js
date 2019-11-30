@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useRouteMatch } from "react-router-dom";
 import qs from "qs";
 
 export default function Items(props) {
   const [state, setState] = useState("");
   let location = useLocation();
+  const match = useRouteMatch();
   console.log("location", location);
+  console.log("match", match);
 
   useEffect(() => {
     console.log({ props });

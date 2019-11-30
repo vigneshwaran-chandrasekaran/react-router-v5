@@ -3,9 +3,10 @@ import { Route, useRouteMatch, useLocation } from "react-router-dom";
 import CustomLink from "../components/CustomLink";
 import Todo from "./Todo";
 
-function Common() {
+function Common(props) {
   let location = useLocation();
   console.log("location", location);
+  console.log("props", props);
   const { path, url } = useRouteMatch();
   console.log({ path }); // old way is match.path
   console.log({ url }); // old way is match.url
