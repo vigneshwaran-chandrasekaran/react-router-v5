@@ -2,12 +2,23 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export default function Todo({ match }) {
+  /**
+   * new way get id from url
+   */
   let { id } = useParams();
+
+  /**
+   * props.match.params.id === match.params.id === id
+   * hereafter no need to user match.params.id to get url :slug
+   */
 
   useEffect(() => {
     console.log("Component did mount");
   }, []);
 
+  /**
+   * old way get id from url
+   */
   useEffect(() => {
     console.log("Id changes");
     fetchTodo();
