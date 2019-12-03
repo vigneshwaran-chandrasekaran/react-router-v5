@@ -19,7 +19,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build:qa": "env-cmd -f .env.qa react-scripts build",
+    "start:qa": "env-cmd -f .env.qa react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
