@@ -18,10 +18,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "prexxxdeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "start:qa": "env-cmd -f .env.qa react-scripts start",
     "build:qa": "env-cmd -f .env.qa react-scripts build",
-    "start:qa": "env-cmd -f .env.qa react-scripts start"
+    "deploy:qa": "env-cmd -f .env.qa react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
