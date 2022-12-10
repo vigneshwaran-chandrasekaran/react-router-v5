@@ -5,7 +5,7 @@
   "homepage": "https://vigneshwaran-chandrasekaran.github.io/react-router-v5/",
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "qs": "^6.10.1",
+    "qs": "^6.10.3",
     "react": "^16.14.0",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^16.14.0",
